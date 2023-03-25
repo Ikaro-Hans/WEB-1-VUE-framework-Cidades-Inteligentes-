@@ -3,7 +3,7 @@ body{
 	margin: 0px;
 	overflow: hidden;
 	background-image: url('images/fundo.jpeg');
-	background-position: right 20% bottom 70%;
+	background-position: right 20% bottom 80%;
 }
 @font-face{
 	font-family: "Font custom";
@@ -43,7 +43,6 @@ body{
 	transform-origin: left;
 	transform: scaleX(1);
 }
-
 .nav-bar-btn:hover{
 	background-color: #3E8BFF;
 	cursor: pointer;
@@ -119,6 +118,7 @@ body{
 .content-body-btn:hover{
 	background-color: #1976D2;
 	color: white;
+	cursor: pointer;
 }
 .img-body{
 	background-image: url('images/cidade.png');
@@ -136,7 +136,7 @@ body{
 	height: 10rem;
 	display: flex;
 	align-items: center;
-	background-color: #1976D2;
+	background-image: linear-gradient(to left, #3e8bff, #3486f4, #2b81e8, #227bdd, #1976d2);
 }
 .text-2{
 	display: flex;
@@ -157,36 +157,48 @@ body{
 	font-size: 17px;
 }
 .contend-cabecalho{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	position: absolute;
 	right: 10%;
 }
 .pesquisa-cabecalho{
+	outline: 0;
 	padding: 10px;
 	padding-left: 30px;
 	width: 200px;
 	height: 35px;
 	border-radius: 12px;
-	border: 1px solid transparent;
+	border: 2px solid transparent;
 	color: #7E8299;
 	/*background: #424242 url(images/pesquisa.png) no-repeat 90% center;*/
 	background-color: #424242;
 	background-image: url(images/pesquisa.png);
 	background-repeat: no-repeat;
 	background-position: left 5px top 5px;
-
 }
-.notificacao-cabecalho, .user-cabecalho{
+.center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.notificacao-cabecalho, .user-cabecalho, .git-cabecalho{
+	outline: 0;
 	width: 35px;
 	height: 35px;
 	border: none;
+	margin: 5px;
 	border-radius: 10px;
 	background-color: #424242;
 }
-.notificacao-cabecalho:hover, .user-cabecalho:hover{
+.notificacao-cabecalho:hover, .user-cabecalho:hover, .git-cabecalho:hover{
+	cursor: pointer;
 	background-color: #5e5e5e;
-}
-.pesquisa-cabecalho:hover{
 	border: 1px solid white;
+}
+.pesquisa-cabecalho:hover, .pesquisa-cabecalho:focus{
+	border: 2px solid white;
 }
 .sub-cabecalho{
 	width: 100%;
@@ -214,20 +226,127 @@ body{
 	align-items: center;
 	color: rgba(0, 0, 0, 0.54);
 }
-.active{
-	border-bottom: 4px solid #1976D2;
-	color: #1976D2;
+.home-page::after, .opcao-sub-cabecalho::after{
+	content: '';
+	background-color: #1976D2;
+	width: 115px;
+	height: 3px;
 	border-radius: 5px;
+	position: absolute;
+	top: 23%;
+	transition: .5s;
+	transform: scaleX(0);
 }
-/*
-@keyframes texto{
-	from{
-		left: -40%;
-		opacity: 20%;
-	}
-	to{
-		left: 5%;
-		opacity: 100%;
-	}
+.home-page:hover::after, .opcao-sub-cabecalho:hover::after{
+	transform: scaleX(1);
 }
-*/
+
+.active::after{
+	content: '';
+	background-color: #1976D2;
+	width: 115px;
+	height: 3px;
+	border-radius: 5px;
+	position: absolute;
+	top: 23%;
+	transform: scaleX(1); 
+	color: #1976D2;
+}
+.active{
+	color: #1976D2;
+}
+@-webkit-keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+.tracking-in-contract {
+	-webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.conteudo{
+	overflow: scroll;
+	width: 70%;
+	height: 30rem;
+	margin-top: 30px;
+	position: absolute;
+	left: 5%;
+}
+.img-body-2{
+	background-image: url('images/cidade-opaca-2.png');
+	background-size: contain;
+	background-repeat: repeat-x;
+	background-position: bottom 0px;
+	width: 100%;
+	height: 11rem;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.inter{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+.my-card{
+	position: relative;
+	right: 10%;
+	margin: 10px;
+	background-color: white;
+}
+.inter-cards{
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+}
+.list{
+	overflow: scroll;
+	padding: 15%;
+	background-color: white;
+	box-shadow: 0px 0px 1px grey;
+	border-radius: 5px;
+	position: relative;
+	right: 6%;
+	width: 250px;
+	height: 230px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.item-list{
+	margin: 5px;
+}
+.title-cont{
+	font-weight: bold;
+	font-family: "Font custom";
+	font-style: normal;
+	color: black;
+}
+.text-cont{
+	font-family: "Font custom";
+	font-style: normal;
+	color: black;
+}
