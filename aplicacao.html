@@ -4,9 +4,7 @@
 	<head>
 		<link rel="icon" type="image/png" href="estilos/images/logo.png"> 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> <!-Link do bootstrap css->
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> <!-Link do bootstrap javascript->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> <!--Link do bootstrap javascript-->
 		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!-Link do vue js->
 		<link rel="stylesheet" type="text/css" href="estilos/style.css"> <!-Link do nosso arquivo css->
 		<meta charset="utf-8">
@@ -19,15 +17,26 @@
 				<span class="descr-cabecalho">"A cidade do futuro começa aqui: descubra o poder das cidades inteligentes."</span>
 			</div>
 			<div class="contend-cabecalho">
-				<input type="search" class="pesquisa-cabecalho" placeholder="Seach">
+				<input type="search" class="pesquisa-cabecalho" id="pesq" list="auto" placeholder="Seach">
 				<button class="notificacao-cabecalho center"><img src="estilos/images/not.png"></button>
-				<button class="user-cabecalho center"><img src="estilos/images/user.png"></button>
+				<button class="user-cabecalho center" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat"><img src="estilos/images/user.png"></button>
 				<a target="blank" href="https://github.com/Ikaro-Hans/WEB-1-VUE-framework-Cidades-Inteligentes-">
 					<button class="git-cabecalho center"><img src="estilos/images/github.png"></button>
 				</a>
 				
 			</div>
 		</div>
+
+		<datalist id="auto">
+			<option value="Tecnologias">
+			<option value="Benefícios">
+			<option value="Desafios">
+			<option value="Exemplos">
+			<option value="Aplicação">
+			<option value="Cidades">
+			<option value="Economia">
+		</datalist>
+
 		<div class="sub-cabecalho">
 			<span class="logo-sub-cabecalho"><img src="estilos/images/logo.png" width="32" height="32"></span>
 			<a class="home-page" href="index.html">Home Page</a>
@@ -191,5 +200,36 @@
 		<div class="img-body-2">
 			
 		</div>
+
+
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h1 class="modal-title fs-5" id="exampleModalLabel">Feedback</h1>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+		          <div class="mb-3">
+		            <label for="recipient-name" class="col-form-label">User Name:</label>
+		            <input type="text" class="form-control" id="recipient-name">
+		          </div>
+		          <div class="mb-3">
+		            <label for="message-text" class="col-form-label">Mensagem:</label>
+		            <textarea class="form-control" id="message-text"></textarea>
+		          </div>
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+		        <button type="button" class="btn btn-primary" id="send">Enviar</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<script type="text/javascript" src="script/vazio.js"></script>
+		<script type="text/javascript" src="script/pesquisa.js"></script>
 	</body>
 </html>
